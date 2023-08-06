@@ -3,8 +3,8 @@ class Solution:
         if(len(nums)==1):
             return nums[0]
         else:
-            l=[]
-            while(len(l)!=1):
+            # l=[]
+            while(len(nums)!=1):
                 l1=[]
                 i=0
                 while(i<len(nums)):
@@ -13,6 +13,6 @@ class Solution:
                         l1.append(max(nums[i+2],nums[i+3]))
                     i+=4
                 nums=l1
-                l=l1
-                print(l)
-            return l[0]
+                # l=l1
+                # print(l)
+            return nums[0]
