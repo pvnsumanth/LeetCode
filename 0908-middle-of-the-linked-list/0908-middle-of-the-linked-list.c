@@ -11,12 +11,7 @@ struct ListNode* middleNode(struct ListNode* head){
     q=head;
     while(q && q->next){
         p=p->next;
-        if(q->next){
-            q=q->next->next;
-        }
-        else{
-            q=q->next;
-        }
+        q=q->next->next;
 
     }
     return p;
