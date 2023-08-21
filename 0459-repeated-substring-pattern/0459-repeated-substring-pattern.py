@@ -6,4 +6,4 @@ class Solution:
         # if s1 in s:
         #     return True
         # return False
-        return True if s in (s*2)[1:-1] else False
+        return True if s in (s+s)[1:-1] else False
