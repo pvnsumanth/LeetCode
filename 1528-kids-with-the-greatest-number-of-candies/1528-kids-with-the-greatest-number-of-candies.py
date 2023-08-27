@@ -3,8 +3,5 @@ class Solution:
         boolean_array=[]
         greatest=max(candies)
         for i in candies:
-            if i+extraCandies>=greatest:
-                boolean_array.append(True)
-            else:
-                boolean_array.append(False)
+            boolean_array.append(i+extraCandies>=greatest)
         return boolean_array
