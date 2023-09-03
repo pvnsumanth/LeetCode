@@ -4,15 +4,11 @@ public:
     int minOperations(vector<string>& logs) {
         cout<<st.size();
         for(auto i:logs){
-            if(i=="./"){
-                continue;
-            }
+            if(i=="./");
             else if(i=="../"){
                 if(!st.empty())st.pop();
             }
-            else{
-                st.push(1);
-            }
+            else st.push(1);
         }
         return st.size();
     }
