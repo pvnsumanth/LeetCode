@@ -3,9 +3,11 @@ public:
     stack <int> st;
     int minOperations(vector<string>& logs) {
         cout<<st.size();
+        string p="./";
+        string q="../";
         for(auto i:logs){
-            if(i=="./");
-            else if(i=="../"){
+            if(i==p);
+            else if(i==q){
                 if(!st.empty())st.pop();
             }
             else st.push(1);
