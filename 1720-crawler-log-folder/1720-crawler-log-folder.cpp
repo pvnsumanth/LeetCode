@@ -2,7 +2,6 @@ class Solution {
 public:
     stack <int> st;
     int minOperations(vector<string>& logs) {
-        cout<<st.size();
         string p="./";
         string q="../";
         for(auto i:logs){
