@@ -6,7 +6,8 @@ public:
         while(left<right){
             if(isalpha(s[left]) && isalpha(s[right])){
                 swap(s[left],s[right]);
-                left++,right--;
+                left++;
+                right--;
             }
             else if(!isalpha(s[left])){
                 left++;
