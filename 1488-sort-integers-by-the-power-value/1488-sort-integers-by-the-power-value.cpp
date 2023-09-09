@@ -14,10 +14,8 @@ public:
         return count;
     }
     static bool mycomp(int a,int b){
-        int x=cal(a);
-        int y=cal(b);
-        if(x==y) return a<b;
-        return x<y;
+        if(cal(a)==cal(b)) return a<b;
+        return cal(a)<cal(b);
     }
     int getKth(int lo, int hi, int k) {
         vector<int> v;
