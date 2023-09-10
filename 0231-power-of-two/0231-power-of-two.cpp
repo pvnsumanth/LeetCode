@@ -4,13 +4,6 @@ public:
         if(n<1){
             return false;
         }
-        if(n==1){
-            return true;
-        }
-        if(2*(n/2)!=n){
-            return false;
-        }
-        n=n/2;
-        return isPowerOfTwo(n);
+        return (n==1 || (n%2==0 && isPowerOfTwo(n/2)));
     }
 };
