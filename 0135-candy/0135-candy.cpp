@@ -8,6 +8,8 @@ public:
         for(int i=nums.size()-2;i>=0;i--){
             if(ratings[i]>ratings[i+1]) nums[i]=max(nums[i+1]+1,nums[i]);
         }
-        return accumulate(nums.begin(),nums.end(),0);
+        int sum=0;
+        for(auto i:nums) sum+=i;
+        return sum;
     }
 };
