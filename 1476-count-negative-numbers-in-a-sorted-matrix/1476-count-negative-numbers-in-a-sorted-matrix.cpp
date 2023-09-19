@@ -11,9 +11,7 @@ public:
                 count+=cols-col;
                 rows--;
             }
-            else{
-                col++;
-            }
+            else col++;
         }
         return count;
     }
