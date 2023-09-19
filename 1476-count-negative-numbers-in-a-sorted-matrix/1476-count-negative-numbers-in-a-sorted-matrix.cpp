@@ -5,7 +5,7 @@ public:
         int cols=grid.size();
         int rows=grid[0].size()-1;
         int col=0;
-        while(col<cols && rows>=0){
+        while(rows>=0 && col<cols){
             if(grid[col][rows]<0){
                 count+=cols-col;
                 rows--;
