@@ -3,7 +3,8 @@ public:
     int countNegatives(vector<vector<int>>& grid) {
         int count=0;
         int cols=grid.size();
-        int rows=grid[0].size()-1;
+        int rows=grid[0].size();
+        rows--;
         int col=0;
         while(rows>=0 && col<cols){
             if(grid[col][rows]<0){
