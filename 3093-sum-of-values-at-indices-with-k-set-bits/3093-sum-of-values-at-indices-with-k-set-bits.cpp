@@ -10,10 +10,12 @@ public:
     }
     int sumIndicesWithKSetBits(vector<int>& nums, int k) {
         int sum=0;
-        for(int i=0;i<nums.size();i++){
-            if(ones(i)==k){
-                sum+=nums[i];
+        int c=0;
+        for(auto i:nums){
+            if(ones(c)==k){
+                sum+=i;
             }
+            c+=1;
         }
         return sum;
     }
