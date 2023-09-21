@@ -1,22 +1,21 @@
 class Solution {
 public:
-    int ones(int n){
-        int count=0;
-        while(n>0){
-            count+=n%2;
-            n=n/2;
-        }
-        return count;
-    }
+    int countSetBits(int n)
+{
+      int count = 0;
+      while(n) {
+          if(n%2 == 1) count++;
+          n /= 2;
+      }
+      return count;
+}
     int sumIndicesWithKSetBits(vector<int>& nums, int k) {
-        int sum=0;
-        int c=0;
-        for(auto i:nums){
-            if(ones(c)==k){
-                sum+=i;
+        long long ans = 0;
+        for(int i=0; i<nums.size(); i++) {
+            if(countSetBits(i) == k) {
+                ans += nums[i];
             }
-            c+=1;
         }
-        return sum;
+        return ans;
     }
 };
