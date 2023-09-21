@@ -2,7 +2,7 @@ class Solution {
 public:
     int countDigitOne(int num) {
        if(num<=0) return 0; if(num<10) return 1;
-        std::string str_num = std::to_string(num);
+        string str_num = to_string(num);
         int len=str_num.length();
         int base=pow(10,len-1);
         int firstDigit=num/base;
