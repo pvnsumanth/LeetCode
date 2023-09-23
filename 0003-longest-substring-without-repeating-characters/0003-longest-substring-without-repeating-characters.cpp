@@ -1,17 +1,14 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        int length=0 , maxlength=0,j=0;
-        map<char ,int> mp;
-        for(int i=0 ;i<s.size(); i++){
-            mp[s[i]]++;
-            length++;
-                while(mp[s[i]]>1){
-                    mp[s[j++]]--;
-                    length--;
-                }
-            maxlength = max(maxlength,length);
+        int longest_len=0;
+        int start=-1;
+        vector<int> hash_table(128,-1);
+        for(int i=0;i<s.size();++i){
+            start=max(start,hash_table[s[i]]);
+            hash_table[s[i]]=i;
+            longest_len=max(longest_len,i-start);
         }
-        return maxlength;
+        return longest_len;
     }
 };
