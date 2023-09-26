@@ -6,13 +6,14 @@ public:
         vector<bool>seen(26,false);
         stack<char>st;
         for(int i=0;i<s.size();i++){
-            if(seen[s[i]-'a']) continue;
-            while(st.size()>0 && st.top()>s[i] && i<tab[st.top()-'a']){
-                seen[st.top()-'a']=false;
-                st.pop();
+            if(seen[s[i]-'a']==false){
+                while(st.size()>0 && st.top()>s[i] && i<tab[st.top()-'a']){
+                    seen[st.top()-'a']=false;
+                    st.pop();
+                }
+                st.push(s[i]);
+                seen[s[i]-'a']=true;
             }
-            st.push(s[i]);
-            seen[s[i]-'a']=true;
         }
         string ans="";
         while (st.size() > 0){
