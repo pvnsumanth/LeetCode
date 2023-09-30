@@ -16,7 +16,7 @@ public:
         q.push(root);
         int sum=0;
         while(!q.empty()){
-            auto node=q.front();
+            TreeNode* node=q.front();
             q.pop();
             if(node->left && node->left->left==NULL && node->left->right==NULL)sum+=node->left->val;
             if(node->left)q.push(node->left);
