@@ -3,13 +3,14 @@ public:
     int characterReplacement(string s, int k) {
         if (s.size() == 0) return 0;
         vector <int> arr(128);
-        int beg = 0, largestCount = 0;
+        int start = 0;
+        int largest = 0;
         for (int end = 0; end < s.size(); end++) {
-            largestCount = max(largestCount, ++arr[s[end]]);
-            if (end - beg + 1 - largestCount > k)       
-                arr[s[beg++]]--;
+            largest = max(largest, ++arr[s[end]]);
+            if (end - start + 1 - largest > k)       
+                arr[s[start++]]--;
         }
-        if(largestCount+k>s.size()) return s.size();
-        return largestCount+k;
+        if(largest+k>s.size()) return s.size();
+        return largest+k;
     }
 };
