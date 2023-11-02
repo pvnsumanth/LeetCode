@@ -1,16 +1,17 @@
 class Solution {
 public:
     int characterReplacement(string s, int k) {
-        if (s.size() == 0) return 0;
-        vector <int> arr(128);
-        int start = 0;
-        int largest = 0;
-        for (int end = 0; end < s.size(); end++) {
-            largest = max(largest, ++arr[s[end]]);
-            if (end - start + 1 - largest > k)       
-                arr[s[start++]]--;
+        vector<int>v(26,0);
+        int start=0;
+        int end=0;
+        int largest=0;
+        while(end<s.size()){
+            largest=max(largest,++v[s[end]-'A']);
+            if(end-start+1-largest>k){
+                --v[s[start++]-'A'];
+            }
+            end++;
         }
-        if(largest+k>s.size()) return s.size();
-        return largest+k;
+        return largest+k<=s.size()?largest+k:s.size();
     }
 };
